@@ -1,0 +1,62 @@
+Remote Procedure Calls
+
+Unique Features
+	- Provides ability to execute subroutines on a remote machine
+	   that look and feel like calls made on a local machine (in terms of code for them)
+		- This is called location transparency
+		- A method call looks the same, whether executed locally or remotely
+	- Supports multiple programming languages
+		- Applications written in different laguages can communicate with each other via RPC
+
+
+How it works
+	- Required objects and methods are declared using Interface Description Laguage (IDL)
+	- Then, using RPC Code generation tools:
+		- Server stub and client stub software is generated (in desired languages)
+		- They handle data serialization/deserialization (marshaling/unmarshalling)
+			- client software call - client stub call -> marshall -> transmit to server
+			- server stub receives message -> unmarshall -> pass tp server-side software
+
+			-> repeat the process in reverse
+
+Development using RPC
+	- As API developers, we need to:
+		- Select the most suitable framework
+		- Define API/data types using IDL
+		- Publish the definitions
+	- Then, whether used server-side or client side,
+	   the relevant stubs can be generated independently on demand
+		- the client and server are completely decoupled
+		- stubs can be generated in any supported language (with the right framework)
+
+
+Benefits of RPC
+	- Convenient for client application developers
+		- They code to interact with RPC-based API is using normal local methods
+		- Details of network communication/data transfer are asbracted from dvelopers
+		- Any failures are raised as standard errors/exceptions in the code
+	- Easy to define new types of actions - just a new method with its own signature
+
+
+Drawbacks od RPC
+	- While RPC calls look like local calls, they are much slower and less reliable
+	- They may create performance bottlenecks which are not obvious
+		- We need to help prevent this by implementing  best practices, e.g.
+			- using asynchronous calls for slow operations
+			- making operations idempotent (where possible)
+			   to help with unreliable communication over the network
+
+
+When to use RPC
+	- For communication between backend services (either internal or external)
+		- Front-end RPC frameworks exist but are less common
+	- When we want to focus on actions to perform
+		- not on network communication or data transmission
+	- We can
+
+
+When NOT to use RPC
+	- When we do not want to abstract away the network communication
+	- When we want to use HTTP cookies, headers etc
+	- For more data-centric APIs, with simple CRUD operations
+	  (Create Read Update Delete)

@@ -1,0 +1,43 @@
+Performance Measurement Metrics
+
+Latency/Response Time:
+	- How long it takes to process each user request
+	  and send the response back to the user
+	- Processing time + (network) latency = End to End Latency
+
+		- Affects user experience
+			- Users have very little patience to slow response times
+		- Desired: as low as possible
+		- Often measured as average latency
+		- But average hides Tail Latency
+		- Tail Latency - latency outside 99%/99.9% of requests
+		  (but can be any percentile, ie 50/75/90%)
+			- it may seem insignificant, but it may mean that every 100th/1000th request
+			  takes much longer to be processed
+			- this may be significant/unacceptable to the business
+			- increases with the increase in load
+			- may indicate an issue that we need to do something about
+
+
+Throughput:
+	- Amount of work done/data processed in a given unit of time
+	- Affects the amount of users that can be supported at once
+	- Desired: less than the request rate
+
+
+Errors:
+	- Functional errors indicate a serious issue and make other metrics meaningless
+		- Means the system cannot be used
+	- Desired: None
+
+Performance Degradation Point:
+	- A point at which the response times to requests starts increasing
+	- If the response time increase is steep, it may indicate resource over-utilization
+		- CPU usage maxed out
+		- Memory is full (which leads to paging to disk -> extremely slow)
+		- I/O: cannot read from/write to storage quickly enough
+		- Message Queues full
+
+Resource Saturation:
+	- Determines the required hardware capacity
+	- Desired: efficient usage of all systems

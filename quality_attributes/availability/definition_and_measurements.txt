@@ -1,0 +1,44 @@
+Availability
+
+A fraction of time/probability that our service is operationally functional and available to the user
+
+
+Calculating Availability (in %)
+	- Availability Formula 1
+		- Uptime: time that our system is operationally functional and available to the user
+		- Downtime: time that our systime is not available
+		- Availability = Uptime / (Uptime + Downtime)
+
+	- Availability Formula 2
+		- MTBF: Mean Time Between Failures
+			- Average time that our system is operational
+			- Useful when:
+				- Dealing with different pieces of hardware
+				- Each component has its own operational shelf life
+		- MTTR: Mean Time To Recovery
+			- Average time it takes the system to detect and recover from a failure
+			- Average Downtime of the system
+		- Availability = MTBF / (MTBF + MTTR)
+		- This formula is:
+			- More statistics-based and talks about probabilities
+			- More suitable for availability estimation, rather than measurement
+			- Shows us the importance of fast detection and recovery to achieve high availability
+
+
+What is considered High Availability?
+	- Users want 100%
+	- Very hard to achieve from engineering point of view
+		Leaves no time for maintenance and upgrades
+	- No strict definition for HA
+	- Industry Standard: between 99-100%
+		- Cloud vendors offer 99.9% or higher
+	99%:
+		- Daily downtime: 15m
+		- Weekly downtime: 1h 40m
+		- Monthly downtime: 7h 18m
+		- Annual Downtime: 3d 15h 36m
+	99.9%:
+		- Daily downtime: 1m 30s
+		- Weekly downtime: 10m
+		- Monthly downtime: 43m
+		- Annual Downtime: 8h 45m

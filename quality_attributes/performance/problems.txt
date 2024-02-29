@@ -1,0 +1,26 @@
+What is perfomance?
+A measure of how fast/responsive a system is:
+	- Under a given workload
+		- amount of backed data to query/process
+		- a volume of requests to handle
+	- On a given set of hardware
+		- hardware type and capacity
+
+
+What are performance problems?
+They are a result of a QUEUE building up somewhere.
+Queue is a bunch of requests that are not getting processed fast enough
+Types of queue:
+	- Network Socket queue
+	- Database IO queue
+	- OS run queue
+	...
+
+Why do queues occur?
+3 main reasons:
+	- Inefficient/slow processing
+	  (the code that does the request processing is slow)
+	- Serial resource access
+	  (new requests are piling up while waiting for the current one to be completed)
+	- Limited resource capacity
+	  (slow hardware running at max capacity)

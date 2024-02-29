@@ -1,0 +1,56 @@
+Good API Design Patterns
+
+	- Complete Design and Implementation Encapsulation
+		- The internal design and implementation details of our system's API should be abstracted and hidden away from the users
+		- The user should neither have access to nor need to know excessive information about how our APIs work internally
+		- I.e. API is black box, users just need to know expected input and outputs
+		- Otherwise it defeats the purpose of having the API
+		- API should be decoupled from internal design and implementation
+			- We should be able to redesign and udate our system interbally, while keeping the external interfaces consistent
+
+	- Easy to Use, Hard to Misuse
+			- Easy to use
+			- Easy to understnd
+			- Impossiblwew to misuse
+		- Ways to make API simple:
+			- Provide only 1 way of perming tasks/getting data
+			- povide cler informstion/description for available actions and resources
+			- Expose only infortmation/actions/resources the users need and no more
+			- Keeping things consistent all cross our API (and multiple APIs from different components if possible)
+
+	- Idempotent Operations
+		- Performing the same operation more than once should not have any (addtional) effect on the result
+		- When a client application sends our API a request, it may fail to be received processed for any number fo reasons
+			- Network failure
+			- Internal system failure
+		- The client app will not know what the problem was, just that something went wrong
+		- It should be able to resend the same request without any adverse consequences
+
+	- Pagination
+		- Allows the client to:
+			- Request only a small subset of all avaiable data that macthes their query
+			- Specify the maximum size of each response from our system
+				- i.e. the "page size"
+			- Specify an offset with the overall dataset
+				- i.e. the "page number"
+			- to receive the next segment, we increment the offset
+				- i.e. "get next page"
+
+	- Asynchronous Operations
+		- If a client makes a request that takes a long time to complete,
+		  in a synchronous operation there is nothing they can do but wait
+		- For such cases should use Asynchronous API pattern
+			- A client will receive a response immediately after submitting the request
+			- The response will contain some kind of identifier that allows to:
+				- Track the progress/status of the operation
+				- Receive the final result when it is available
+
+	- API Versioning
+		- We should version our APIs explicitly
+		  and let clients know which version they are / should be using
+		- While we want to keep our API as decoupled from internal design and implementation as possible,
+		  in reality wil may have to make non-backwards compatible changes at some point
+		- If we explicitly version our APIs and maintain 2 (or more version) at the same time, we can:
+			- Deploy and start serving the new version to new/interested clients
+			- Maintain the previous version and avoid causing disruptions/outages for the clients
+			- Gradually deprecate the old version (while communicating/negotiating the timelines with the clients)

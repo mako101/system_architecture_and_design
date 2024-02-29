@@ -1,0 +1,21 @@
+Sources of Failure
+
+	 1. Human Errors
+		- Deploying a bad configuration
+		- Running wrong command/script
+		- Deploying insufficiently tested new software
+
+	2. Software Errors
+		- Out-Of-Memory Exceptions
+		- Null Pointer Exceptions
+		- Segmentation Faults
+		- Long Garbage Collections
+
+	3. Hardware Failures
+		- Servers/routers/storage devices breaking down
+		- Power Outages
+		- Network failures due to:
+			- Infrastructure Issues
+			- Congestion
+
+	- Despite our best efforts, failures will inevitably occur

@@ -1,0 +1,38 @@
+3 types requirements, also called architectural drives
+(they drive our architectural decisions from infinite possibilities
+to a specific solution that satisfies the client's needs)
+
+	- Features of the System
+		- Describe the system's behaviour, what the system must do
+		- Tied to the objective of the system
+		- Functional requirements
+			- describe our system as a function
+				- it will take users actions as input
+				- and produce a desired output
+			- These DO NOT determine architecture
+			- Any architecture can achieve any feature!
+
+	- Quality Attributes
+		- Non-Functional requirements
+		- What the system must have (as opposed to what it must do)
+			- Examples:
+				- Scalability
+				- Availability
+				- Reliability
+				- Security
+				- Performance
+		- These DO dictate the architecture
+		- Architecture determines quality attributes
+			- Different architectures types provide different quality attributes
+
+
+	- System Constraints
+		- Boundaries and Limitations
+			Examples:
+				- Time constraints
+				- Budget constraints
+				- Staff constraints
+				  (limited number of available engineers)
+		- May force us to make certain tradeoffs and sacrifices in our design
+			- We may have to pick some architectures that wouldn't normally pick,
+			  if we didn't have the constraints

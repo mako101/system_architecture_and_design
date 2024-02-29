@@ -1,0 +1,49 @@
+What is Software Architecture
+
+High level description of the system's structure, its different components,
+and how those components interact with each other to fulfill
+the system's requirements and constraints
+
+	- An abstraction that shows us the important components
+	  while hiding implementation details
+
+	- Technologies and programming languages used are NOT part of the architecture -
+	  they are part of implementation
+	  	- Technology selection should be left until the end of the design
+
+	- The components are "black box" elements defined by their behaviour and APIs
+		- The components  may themselves be complex systems with their own SA diagrams
+
+	- Components come together to do what the system must do (i.e. fulfill the requirements)
+
+	- The system does not do what it shouldn't do (which is described in system constraints)
+
+
+SA can have many possible levels of abstraction
+	- Classes structs (lowest)
+	- Modules/packages/libraries
+	- Services (processes/groups of processes,
+	  potentially on different mahcines)
+
+Distributed multi-service approach allows us to arhcutect systens that can:
+	- Handle large amounts of requests
+	- Process huge amounts of data
+	- Serve many users every day
+
+
+Software Development Cycle:
+	- Design
+			- SA is the output of Design
+			  and input for Implementation
+	- Implementation
+	- Testing
+	- Deployment
+
+Software Architecture cannot be guaranteed to be:
+	- Correct
+	- Optimal
+
+But we can use:
+	- Use Methodical Design Process
+	- Apply industry-proven Architectural patterns
+	- Apply Best Practices

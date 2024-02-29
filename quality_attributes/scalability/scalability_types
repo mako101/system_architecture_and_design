@@ -1,0 +1,56 @@
+Vertical Scaling
+	- Adding or upgrading resources on a single machine
+	- I.e. "get a bigger box"
+	- more CPU/memory/disk space
+	- Faster Network card
+
+	Pros:
+		- Any application can benefit from this, without any code changes
+		- Easier to maintain (only one machine)
+		- Migration between different machine sizes is easy (??)
+		  (if its in the cloud)
+	Cons:
+		- Does not provide high availability or fault tolerance
+			- Single point of failure
+		- There is a hardware limit of how big/fast a single amhcine can be
+		  (and for something that serves users on the internet,
+		   that limit can be reached very quickly)
+
+
+Horizontal scaling
+	- Having multiple servers within each application layer, behind a load balancer
+	- Generally the accepted/excepted approach
+
+	Pros:
+		- No limit on scalability (can add as many extra resources as we want, in theory)
+		- Easy to add/remove machines
+		- High Availability and Fault Tolerance out of the box
+		  (if designed correctly)
+	Cons:
+		- Code changes may be required
+			- The application code has to be STATELESS to support horizontal scaling
+				- ie we do not expect requests for the same user to always go to the same server
+				(although that is also possible)
+		- Increased complexity, coordination overhead
+
+
+Team/Organizational Scalability
+	- Adding more developers/engineers to work on the same codebase
+	- It helps to a point, especially while the team is smaller
+	- Eventually adding more staff will result in decrease in productivity
+		- Too many meetings, too crowded -> less productive
+		- Increased code merge conflicts
+		- Testing is harder and slowe
+		- Releases become bigger and more risky
+			- Some companies respond by making releases less frequent,
+			  which makes it worse still!
+
+	- Software architecture affects teams' velocity!
+		- Having the system split into multiple loosely coupled services
+			- Each has its onw dev team, tech stack, release schedule
+			- Allows for much higher productivity from our engineers
+		- BUT splitting a monolithic system into services will be costly
+
+
+The types of scaling are non-exclusive.
+We can combine them in any way, including all 3 at once

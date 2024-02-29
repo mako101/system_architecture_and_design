@@ -1,0 +1,14 @@
+Scalability
+
+The measure of system's ability to handle a growing amount of work,
+in an easy and cost-effective way, by adding resources to the system
+
+Load vs Resources
+	- Ideally we want to have Linear Scalability
+	  (when adding x amount of resource equates in y increase in performance)
+	- In reality that is very difficult to achieve
+		- Adding resouces produces logarithmic increase in performance
+		- There is some increase in performance with more reouces,
+		  but it evens out and may even start degrading as we keep adding more
+		- Adding resources also increases resource management overhead,
+		  which may offset performance gains and even lead to performance degradation

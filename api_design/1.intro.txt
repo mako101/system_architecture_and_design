@@ -1,0 +1,52 @@
+Application Programming Interface (API)
+
+	- After capturing functional requirements,
+	  we can think of our system as a black box with:
+	  	- Specific behaviour
+	  	- Well defined interface
+	  		- Set inputs
+	  		- Set outputs
+
+	- The interface is a contract between:
+		- Engineers who implement the system
+		- Client applications that use the system
+		  (programmatically over the network)
+		  	- Front end clients (mobile apps/web browsers)
+		  	- Back end systems (internal or external)
+	- Each component of our system will have its own API
+	- The components of our system will interact with each other through them
+
+
+API Categories
+
+	- Public APIs
+		- Exposed to the general public
+		- Any developer can call them from their application
+		- Good practice - require user registration before allowing access. This provides:
+			- Control over who uses the system externally
+			- Control over how they use it
+			- Better Security
+			- blacklisting users using the system inappropriately
+
+	- Private APIs
+		- Exposed only internally withing the company
+		- Allow other teams/parts of organization to:
+			- Take advantage of the system
+			- Provide bigger value to the company
+			- Not to expose the system directly outside our org
+
+	- Partner APIs
+		- Similar to Public API
+		- Exposed only to companies/users who have a business relationship with us , e.g. they:
+			- Bought our product
+			- Subscribed to our service
+
+
+Benefits of APIs
+	- Clients can immediately and easily enhance their our systems/business
+	  by using the data/functionality our API's can provide
+	- They do not need to know anything about our system's internal design/implementation
+	- APIs can be used before the entire system is fully implemented
+	- APIs make it easier to achitect the internal strucure of our system
+		- They define endpoints to different routes the users cant ke to use our system
+

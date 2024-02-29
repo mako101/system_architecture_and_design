@@ -1,0 +1,62 @@
+Fault Tolerance
+Ability of our system to remain (fully or partly) operational
+despite failures within one or multiple of its components
+
+3 ways of achieving fault tolerance
+
+	- Failure Prevention
+		- Eliminate any Single Points of Failure through Replication and Redundancy
+			- Spatial Redundancy: storing data / running same application
+			  on multiple machines
+			- Time Redundancy: Repeating the same request/operation multiple times
+			  until it succeeds, or we give up
+			  	- e.g. HTTP request retry
+
+
+		- 2 strategies widely used in the industry
+
+			- Active-Active architecture
+				- 2 or more active replicas (ie all are receiving requests)
+				- All in sync with each other
+				- On failure the active replicas take over the traffic from the failed one(s)
+
+				Pros:
+					- Load is spread among all active replicas
+						- Identical to horizontal scalability
+					- Higher throughput capability
+					- Better performance
+				Cons:
+					- As all replicas are receiving requests, keeping them in sync is non-trivial
+
+			- Active-Passive architecture
+				- 1 active replica that receives all traffic
+				- 1 or more passive replicas that periodically receive state snapshots from the active one
+
+				Pros:
+					- Easier to implement/manage
+						- Clear leader with up-to-date data
+						- Others are followers
+				Cons:
+					- No ability to scale
+						- All requests always go to one machine
+
+	- Failure Detection and Isolation
+		- Detect if host is down and remove it from the pool of available hosts
+		- Requires a Monitoring Service, which can :
+			- Send periodic messages to the hosts (and check for responses)
+			- Receive periodic "heartbeat" message from the hosts
+			- Do more complex, checks, such as:
+				- Monitor Error rates on the hosts
+				- Monitor latency/response times
+		- Monitoring Service may sometimes get false positives, if the host takes longer than expected to respond
+		- Most important is that it does not get any false negatives, i.e. fail to detect a problem
+
+	- Recovery from Failure
+		- Once we detect a faulty host, we can:
+			- Stop sending traffic/workloads to it
+			- Restart the host (if it is the issue that can be fixed by a restart)
+			- Rollback -> go back to previous version
+				- Database - go back to data in a known good state
+					- BUT: may mean data loss and inconsistency with other DB instances
+				- Software Deployment - go back to previous stable version
+					- Problems can be detected automatically during post-deployment tests

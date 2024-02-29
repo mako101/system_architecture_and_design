@@ -1,0 +1,54 @@
+The systems are often redesigned because of not being abel to fulfill
+NON-Functional requirements
+	- Not fast enough
+	- Doesn't scale
+	- Not secure enough
+	- Slow to develop
+	- Hard to maintain
+
+
+System Quality Attributes
+	- Non-functional requirements
+	- They describe:
+		- The qualities of functional requirements
+		- The overall properties of the system
+	- Provide a measure of how well a systems performs
+	  on a particular dimension
+	- Have direct correlation with the architecture of the system
+
+	Examples:
+		- when a user submits the search parameters,
+		  they should get a list of products with at most 100 millisecnds
+		  	- Performance Requirement, tied to a Functional Requirement
+		- The online store must be available to the users at least 99.9% of the time
+		 	- Availability Requirement, global to the whole system
+		- Dev Team should be able to deploy a new version of the Online Store at least twice a week
+			- Global Deployability Requirement
+
+
+Considerations:
+	- Measurability/Testability
+		- Quality Attributes must be:
+		- measurable
+		- testable
+		e.g.:
+			- what exactly does "fast response" mean??
+
+	- Tradeoffs:
+		- NO single software architecture can provide all the quality attributes
+			- If there were, everyone would use it for every single system and we wouldn't need SA job!
+		- Some quality attributes contradict each other
+				- Some attribute combinations are hard/impossible to achieve
+		- SA's job is to make the right tradeoff
+		E.g.:
+			Security VS Performance
+
+	- Feasibility
+		- SA must ensure the clients requirements are realistic
+			- Clients may expect something technically impossible
+			  or prohibitively expensive
+		- Examples:
+			- Impossibly low latency
+			- 100% system availability
+			- Immunity against cyberattacks
+

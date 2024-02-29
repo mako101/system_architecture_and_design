@@ -1,0 +1,16 @@
+System Performance Objectives
+
+1. Minimize Request-Response Latency
+	- measured in time units
+	- Depends on:
+		- Wait/Idle time (time the request spends waiting to be processed,
+		  once submitted)
+		- Processing time (time it takes to actually process the request)
+
+2. Maximize Throughput
+
+	- Measured as a rate of x requests in a given time
+
+	Depends on:
+		- Latency -> How to minimize latency?
+		- Capacity

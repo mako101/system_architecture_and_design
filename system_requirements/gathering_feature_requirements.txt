@@ -1,0 +1,13 @@
+How to gather feature requirements?
+
+1. Indentify all actors/users in our system
+2. Capture and describe all possible use cases/scenarios
+3. Expand each use case through the flow of events (user flow)
+	- Each event should contain
+		- Action taken
+		- Data that flows to and from our system
+
+Sequence Diagrams
+	- A way to document ntercations between actors and different system components
+	  while visualised in a timeline
+

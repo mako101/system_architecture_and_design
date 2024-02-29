@@ -1,0 +1,31 @@
+Network Latency
+
+	- Cost of establishing connections
+		- Handshake with the router
+		- Setting up SSL/TLS encryption
+
+
+Reducing Network Latency
+
+	- Connection Pools
+		- Reusing already established connections
+
+	- Persistent Connections (Browsers do this automatically)
+		- A connection that is maintained for some time
+		  after the last call to the server is complete
+
+	- Caching
+		- Session/Query Data from backend/DB
+		- Static web data
+		- SSL Session Caching (?)
+			- If a server detects that the same client is trying to establish SSL session,
+			  they can agree to reuse an existing session
+
+	- Efficient data tranfser formats
+		- Using RPC calls instead of http where possible
+		- BUT: using RPC reduces interoperability/compatibility between services
+
+
+	- Using data compression to reduce the sise of data trasnfer
+		- Overhead of compressing data server-size and uncompressing the data client-side
+		- Needs some extra CPU cycles, but much lower overhead than larger data transfer

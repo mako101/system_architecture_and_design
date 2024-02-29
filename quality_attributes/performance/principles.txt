@@ -1,0 +1,23 @@
+Performance Principles
+
+Efficiency
+	- Efficient Resource Utilization
+		- IO: memory, disk, network
+		- CPU
+	- Efficient Logic
+		- Fast Algorithms
+		- Efficient DB queries
+	- Efficient Data Storage
+		- Using appropriate data structures
+		- Using Efficient DB schema/indexing
+
+	- Caching
+
+Concurrency
+	- Hardware -> supports concurrency
+	- Software
+		- Queuing
+		- Coherence
+
+Capacity
+	- How to identify if you have capacity bottleneck

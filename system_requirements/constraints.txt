@@ -1,0 +1,66 @@
+System Constraints
+
+	- Essentially decisions that have already been made for us,
+	  restricting our degrees of freedom
+	- Not always a bad thing!
+	- Constraints are referred to as pillars for software architecture:
+	 	- Reduce the amount of options to consider
+	 	- Provide a solid starting point
+	 	- Normally non-negotiable, so system has to be designed around them
+
+
+3 types of constraints:
+	- Technical constraints, e.g.:
+			- being locked to specific hardware/software/cloud vendors
+			- having to use specific programming languages
+			- having to use specific databases/technologies
+			- having to support specific platforms, OS types etc
+		- These may seem like implementation details, but in reality
+		  they affect the design decisions we make and put restrictions on possible architectures
+		- Examples:
+			- On-prem vs cloud approach will result in very different software architectures
+			- Having to support older/outdated slower devices (as well as current ones)
+			  will add additional complexity/components to the software architecture
+
+	- Business constraints, e.g.:
+			- Limited budget
+			- Strict deadline
+			- Having to use 3rd party services, e.g.:
+					- Shipping/billing providers for an online store
+					- Integrations with banks/brokers/security/fraud detection
+				  services for an investment platform
+				- Lets us focus on our own offering and avoid spending time and effort
+				  creating services readily available from other providers
+				- But our own designs will have to account for APIs and design paradigms
+				  of the providers we will use
+		- There are different architectural patterns, based on the size of the business
+			- e.g. startup vs big established organization
+
+	- Regulatory/legal constraints
+		- May be global or region-specific
+			- e.g. GDPR (General Data Protection Regulation) in EU
+
+
+Considerations
+We should not accept any constraints as a given, and should examine
+if they are real/non-negotiable constraints, or something that could be changed,
+and as a result, may benefit the business in the long run
+
+	- Negotiable vs Non-Negotiable constraints
+		- External constraints (i.e. those from outside the business),
+		  e.g. regulations, are generally non-negotiable
+		- Internal constraints, e.g. timeline or budget, may be negotiable
+
+	- Examining Current Lock-Ins
+		- If the business is locked to using a particular hardware/cloud/technology,
+		  taking on a new project may be a perfect time to re-evaluate such commitments,
+		  and see if a better option is available
+
+	- Loosely Coupled Architecture
+		- When we do accept constraints to our architecture, we should leave "enough room"
+		  to move away from them in the future, e.g.:
+		  	- If using a specific database or 3rd party service,
+		  	  do not tightly couple our system to their APIs
+		  	- Switching providers in the future should require minimal changes
+		  	- Different parts of the system should be decoupled, so that
+		  	  they can be updated or replaced independently
